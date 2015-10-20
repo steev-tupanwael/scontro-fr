@@ -1,0 +1,157 @@
+@import 'nib'
+
+$global_bg = #333
+$global_width = 1024px
+$global_padding = 0px 20px
+
+normalize-base()
+normalize-html5()
+
+.fix-topmenu
+	fixed top 0px left
+	z-index 999999999
+
+body
+	background $global_bg
+	min-width $global_width
+	width 100%
+	
+	h1
+		font-size 20px
+		font-weight normal
+	
+header
+	min-height 60px
+	background #F1F1F1
+	padding $global_padding
+	
+nav 
+	ul.header
+		-webkit-padding-start 0
+		-webkit-margin-after 0
+		-webkit-margin-before 0
+		display table
+		width 100%
+		font-size 14px
+
+		li
+			list-style none
+			display table-cell
+			text-align right
+
+		li:first-child
+			text-align left
+		
+		li.notif
+			width 1%
+			white-space nowrap
+			vertical-align middle
+		
+		li.notif div
+			background #FC0
+			color black
+			padding 5px
+			border-radius 50%
+
+		li.icon
+			width 1%
+			white-space nowrap
+			vertical-align middle
+		
+		li.icon img
+			width auto
+			margin 0 5px
+		
+		li.icon_user
+			width 1%
+			white-space nowrap
+			vertical-align middle
+
+		li.icon_user img
+			width 30px
+			margin 0 5px
+		
+		li:last-child
+			width 1%
+			white-space nowrap
+			padding-left 5px
+	
+div#content
+	background #EFEFEF
+	min-height 42px
+	
+	#topmenu
+		border-top solid 3px #FC0
+
+	nav
+		background #F9F9F9
+		padding $global_padding
+		border-bottom solid 1px #DDDDDD
+		
+	#viewer
+		relative top left
+		border solid 1px transparent
+		clearfix()
+		
+		#sidemenu
+			width 250px
+			font-size 12px
+			float left
+			absolute top left
+			background #F9F9F9
+			border-right solid 1px #DDDDDD
+			display block
+			
+			+above(1200px)
+				display block
+				height 100%
+				
+				
+			
+			nav
+				padding-top 20px
+				color #8A8A8A
+				
+				+above(1200px)
+					border-bottom none
+			
+				ul
+					-webkit-padding-start 0
+					-webkit-margin-after 0
+					-webkit-margin-before 0
+				
+				ul li
+					list-style none
+					font-weight bolder
+					margin-bottom 50px
+				
+				ul li li
+					-webkit-padding-start 10px
+					font-weight normal
+					margin-bottom 0px
+		
+		#mainpage
+			width 900px
+			font-size 12px
+			margin auto
+			
+			+above(1200px)
+				relative top left 275px
+				margin 0
+				
+			
+		.breadcrumb
+			color #CCC
+			margin 10px 0
+			
+		.paper
+			background white
+			box-shadow 1px 2px 5px #666
+			min-height 500px
+			margin-bottom 50px
+
+footer
+	clearfix()
+	background #333
+	min-height 100px
+	padding $global_padding

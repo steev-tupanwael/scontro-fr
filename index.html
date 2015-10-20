@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Page_Name - Module on Corporate_Name</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="header">
+					<li><h1>Client Name/Logo</h1></li>
+					<li class="notif"><div>99</div></li>
+					<li class="icon"><img src="img/dasboardicon.png" alt="dashboard"></li>
+					<li class="icon_user"><img src="img/usericonsample.png" alt="profilpic"></li>
+					<li>Yusup Mulyana</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="content">
+			<nav id="topmenu">
+				<ul class="header">
+					<li><h1>Module Name</h1></li>
+					<li>setting</li>
+				</ul>
+			</nav>
+			<section id="viewer">
+				<div id="sidemenu">
+					<nav>
+						<ul>
+							<li>Favorites
+								<ul>
+									<li>Form One</li>
+									<li>Form Two</li>
+								</ul>
+							</li>
+							<li>Forms
+								<ul>
+									<li>Form One</li>
+									<li>Form Two</li>
+									<li>Form Three</li>
+								</ul>
+							</li>
+							<li>Lists
+								<ul>
+									<li>Form One</li>
+									<li>Form Two</li>
+								</ul>
+							</li>
+							<li>Reports</li>
+						</ul>
+					</nav>
+				</div>
+				<div id="mainpage">
+					<div class="breadcrumb">map : pagemap/group/pagename</div>
+					<div class="paper">
+
+					</div>
+				</div>
+			</section>
+			<script id="loginTemplate" type="text/template">
+				<%= user %> <%= pass %>
+			</script>
+		</div>
+		<footer>
+			<div>
+
+			</div>
+		</footer>
+
+		<script src="js/underscore.js"></script>
+		<script src="js/jquery-2.1.4.js"></script>
+		<script src="js/backbone.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/models.js"></script>
+		<script src="js/collections.js"></script>
+		<script src="js/views.js"></script>
+		<script src="js/router.js"></script>
+		<script>
+			// new App.Router;
+			// Backbone.history.start();
+
+			var wrap = $(window);
+
+			wrap.on("scroll", function(e) {
+				console.log(wrap.scrollTop());
+				if (wrap.scrollTop() > 50) {
+					$("#topmenu").addClass('fix-topmenu');
+				} else {
+					$("#topmenu").removeClass('fix-topmenu');
+				}
+			});
+		</script>	
+	</body>
+</html>
