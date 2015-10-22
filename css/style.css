@@ -110,6 +110,7 @@ nav ul.header li:last-child {
 div#content {
   background: #efefef;
   min-height: 42px;
+  overflow: hidden;
 }
 div#content #topmenu {
   border-top: solid 3px #fc0;
@@ -119,11 +120,41 @@ div#content nav {
   padding: 0px 20px;
   border-bottom: solid 1px #ddd;
 }
+div#content nav ul.header li:first-child {
+  width: 1%;
+}
+div#content nav ul.header li:nth-child(2) {
+  text-align: left;
+}
+@media only screen and (min-width: 1200px) {
+  div#content nav #menubtn {
+    display: none;
+  }
+}
+div#content nav .border-menu {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-left: 2.25em;
+}
+div#content nav .border-menu:before {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  left: 0;
+  width: 1.2em;
+  height: 0.1625em;
+  border-top: 0.56875em double #666;
+  border-bottom: 0.189583333333333em solid #666;
+}
 div#content #viewer {
   position: relative;
   top: 0;
   left: 0;
   border: solid 1px transparent;
+  display: table;
+  width: 100%;
+  font-size: 12px;
   zoom: 1;
 }
 div#content #viewer:before,
@@ -136,19 +167,23 @@ div#content #viewer:after {
 }
 div#content #viewer #sidemenu {
   width: 250px;
-  font-size: 12px;
+  background: #f9f9f9;
+  border-right: solid 1px #ddd;
+  padding-top: 10px;
+  display: none;
   float: left;
   position: absolute;
   top: 0;
   left: 0;
-  background: #f9f9f9;
-  border-right: solid 1px #ddd;
-  display: block;
 }
 @media only screen and (min-width: 1200px) {
   div#content #viewer #sidemenu {
-    display: block;
     height: 100%;
+    display: table-cell;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 }
 div#content #viewer #sidemenu nav {
@@ -169,6 +204,7 @@ div#content #viewer #sidemenu nav ul li {
   list-style: none;
   font-weight: bolder;
   margin-bottom: 50px;
+  line-height: 1.4em;
 }
 div#content #viewer #sidemenu nav ul li li {
   -webkit-padding-start: 10px;
@@ -176,27 +212,90 @@ div#content #viewer #sidemenu nav ul li li {
   margin-bottom: 0px;
 }
 div#content #viewer #mainpage {
-  width: 900px;
-  font-size: 12px;
-  margin: auto;
+  padding-top: 20px;
+  display: block;
 }
 @media only screen and (min-width: 1200px) {
   div#content #viewer #mainpage {
-    position: relative;
-    top: 0;
-    left: 275px;
-    margin: 0;
+    display: table-cell;
   }
 }
 div#content #viewer .breadcrumb {
   color: #ccc;
-  margin: 10px 0;
+  width: 900px;
+  margin: 10px auto;
 }
-div#content #viewer .paper {
+div#content #viewer .notification {
+  background: #ffc;
+  width: 900px;
+  margin: 10px auto;
+  text-align: center;
+}
+div#content #viewer .notification section {
+  padding: 15px;
+}
+div#content #viewer .loginbox {
+  width: 400px;
+  margin: auto;
   background: #fff;
   -webkit-box-shadow: 1px 2px 5px #666;
   box-shadow: 1px 2px 5px #666;
   min-height: 500px;
+  position: relative;
+}
+div#content #viewer .loginbox .bglogin {
+  width: 100%;
+  height: 200px;
+  background: #999;
+}
+div#content #viewer .loginbox .logologin {
+  width: 170px;
+  height: 170px;
+  margin: auto;
+  border: solid 4px #cdcdcd;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #fff;
+  position: absolute;
+  top: 100px;
+  left: 111px;
+}
+div#content #viewer .loginbox form {
+  width: 300px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+div#content #viewer .loginbox form div {
+  line-height: 1.5em;
+}
+div#content #viewer .loginbox form div input[type="text"],
+div#content #viewer .loginbox form div input[type="password"] {
+  width: 286px;
+  background: #f0f0f0;
+  border: solid 2px #cdcdcd;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+div#content #viewer .loginbox form div button {
+  width: 300px;
+  padding: 12px;
+  color: #fff;
+  background: #063;
+  border: none;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+div#content #viewer .paper {
+  width: 900px;
+  margin: auto;
+  background: #fff;
+  -webkit-box-shadow: 1px 2px 5px #666;
+  box-shadow: 1px 2px 5px #666;
+  min-height: 700px;
   margin-bottom: 50px;
 }
 footer {

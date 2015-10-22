@@ -10,56 +10,82 @@
 			<nav>
 				<ul class="header">
 					<li><h1>Client Name/Logo</h1></li>
-					<li class="notif"><div>99</div></li>
-					<li class="icon"><img src="img/dasboardicon.png" alt="dashboard"></li>
-					<li class="icon_user"><img src="img/usericonsample.png" alt="profilpic"></li>
-					<li>Yusup Mulyana</li>
+					<li>Help</li>
 				</ul>
 			</nav>
 		</header>
 		<div id="content">
 			<nav id="topmenu">
 				<ul class="header">
-					<li><h1>Module Name</h1></li>
-					<li>setting</li>
+					<li><h1>Login</h1></li>
 				</ul>
 			</nav>
 			<section id="viewer">
-				<div id="sidemenu">
-					<nav>
-						<ul>
-							<li>Favorites
-								<ul>
-									<li>Form One</li>
-									<li>Form Two</li>
-								</ul>
-							</li>
-							<li>Forms
-								<ul>
-									<li>Form One</li>
-									<li>Form Two</li>
-									<li>Form Three</li>
-								</ul>
-							</li>
-							<li>Lists
-								<ul>
-									<li>Form One</li>
-									<li>Form Two</li>
-								</ul>
-							</li>
-							<li>Reports</li>
-						</ul>
-					</nav>
-				</div>
 				<div id="mainpage">
 					<div class="breadcrumb">map : pagemap/group/pagename</div>
-					<div class="paper">
-
+					<div class="notification">
+						<section>Data no. xxxx berhasil diinput</section>
+					</div>
+					<div class="loginbox">
+						<div class="bglogin"></div>
+						<div class="logologin"></div>
+						<form>
+							<div>Username</div>
+							<div><input type="text"></div>
+							<div>Password</div>
+							<div><input type="password"></div>
+							<div>
+								<button>Log In</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</section>
-			<script id="loginTemplate" type="text/template">
-				<%= user %> <%= pass %>
+			<script id="mainTemplate" type="text/template">
+				<nav id="topmenu">
+					<ul class="header">
+						<li id="menubtn"><a href="#sidemenu" class="border-menu"></a></li>
+						<li><h1>Module Name</h1></li>
+						<li>setting</li>
+					</ul>
+				</nav>
+				<section id="viewer">
+					<div id="sidemenu">
+						<nav>
+							<ul>
+								<li>Favorites
+									<ul>
+										<li>Form One</li>
+										<li>Form Two</li>
+									</ul>
+								</li>
+								<li>Forms
+									<ul>
+										<li>Form One</li>
+										<li>Form Two</li>
+										<li>Form Three</li>
+									</ul>
+								</li>
+								<li>Lists
+									<ul>
+										<li>Form One</li>
+										<li>Form Two</li>
+									</ul>
+								</li>
+								<li>Reports</li>
+							</ul>
+						</nav>
+					</div>
+					<div id="mainpage">
+						<div class="breadcrumb">map : pagemap/group/pagename</div>
+						<div class="notification">
+							<section>Data no. xxxx berhasil diinput</section>
+						</div>
+						<div class="paper">
+
+						</div>
+					</div>
+				</section>
 			</script>
 		</div>
 		<footer>

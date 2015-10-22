@@ -9,6 +9,5 @@
 
 	//helper for event
 	var vent = _.extend({}, Backbone.Events);
-
 	
 })();

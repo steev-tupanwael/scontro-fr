@@ -79,6 +79,7 @@ nav
 div#content
 	background #EFEFEF
 	min-height 42px
+	overflow hidden
 	
 	#topmenu
 		border-top solid 3px #FC0
@@ -88,25 +89,53 @@ div#content
 		padding $global_padding
 		border-bottom solid 1px #DDDDDD
 		
+		ul.header
+			
+			li:first-child
+				width 1%
+
+			li:nth-child(2)
+				text-align left
+		
+		#menubtn
+			+above(1200px)
+				display none
+
+		.border-menu
+			relative top left
+			padding-left 2.25em
+		
+		.border-menu:before
+			content ""
+			absolute top 0.1em left 0
+			width 1.2em
+			height (0.125*1.3)em
+			border-top @height*3.5 double #666
+			border-bottom (@border-top/3)em solid #666
+		
 	#viewer
 		relative top left
 		border solid 1px transparent
+		display table
+		width 100%
+		font-size 12px
 		clearfix()
 		
 		#sidemenu
 			width 250px
-			font-size 12px
-			float left
-			absolute top left
 			background #F9F9F9
 			border-right solid 1px #DDDDDD
-			display block
+			padding-top 10px
+			display none
+			float left
+			absolute top left
 			
 			+above(1200px)
-				display block
 				height 100%
-				
-				
+				display table-cell
+				float none
+				relative top left
+						
 			
 			nav
 				padding-top 20px
@@ -124,6 +153,7 @@ div#content
 					list-style none
 					font-weight bolder
 					margin-bottom 50px
+					line-height 1.4em
 				
 				ul li li
 					-webkit-padding-start 10px
@@ -131,23 +161,85 @@ div#content
 					margin-bottom 0px
 		
 		#mainpage
-			width 900px
-			font-size 12px
-			margin auto
+			padding-top 20px
+			display block
+			
 			
 			+above(1200px)
-				relative top left 275px
-				margin 0
+				display table-cell
 				
 			
 		.breadcrumb
 			color #CCC
-			margin 10px 0
+			width 900px
+			margin 10px auto
+		
+		.notification
+			background #ffffcc
+			width 900px
+			margin 10px auto
+			text-align center
 			
-		.paper
+			section
+				padding 15px
+		
+		.loginbox
+			width 400px
+			margin auto
 			background white
 			box-shadow 1px 2px 5px #666
 			min-height 500px
+			position relative
+			
+			.bglogin
+				width 100%
+				height 200px
+				background #999
+				
+			.logologin
+				width 170px
+				height 170px
+				margin auto
+				border solid 4px #cdcdcd
+				border-radius 5px
+				background white
+				position absolute
+				top 100px
+				left ((400/2)-(178/2))px
+			
+			form
+				width 300px
+				margin auto
+				margin-top 100px
+				margin-bottom 100px
+				
+				div
+					line-height 1.5em
+					
+					input[type="text"], input[type="password"]
+						width 286px
+						background #f0f0f0
+						border solid 2px #cdcdcd
+						padding 5px
+						margin-bottom 20px
+						
+					button
+						width 300px
+						padding 12px
+						color white
+						background #006633
+						border none
+						border-radius 5px
+						text-align center
+						margin-top 50px
+						margin-bottom 50px
+
+		.paper
+			width 900px
+			margin auto
+			background white
+			box-shadow 1px 2px 5px #666
+			min-height 700px
 			margin-bottom 50px
 
 footer
