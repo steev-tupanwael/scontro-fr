@@ -29,7 +29,7 @@
 					<div class="loginbox">
 						<div class="bglogin"></div>
 						<div class="logologin"></div>
-						<form id="login">
+						<form id="loginForm" action="" method="post">
 							<div><label for="username">Username</label></div>
 							<div><input type="text" id="username" name="username"></div>
 							<div><label for="password">Password</label></div>
@@ -106,7 +106,7 @@
 			new App.Router;
 			Backbone.history.start();
 
-			
+			new App.Views.App();
 
 			var wrap = $(window);
 

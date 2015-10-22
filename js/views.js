@@ -16,7 +16,7 @@ App.Views.App = Backbone.View.extend({
 ==================================*/
 
 App.Views.Login = Backbone.View.extend({
-	el: '#login',
+	el: '#loginForm',
 
 	events: {
 		'submit': 'login'
@@ -25,7 +25,13 @@ App.Views.Login = Backbone.View.extend({
 	login: function(e) {
 		e.preventDefault();
 
-		console.log( 'login' );
+		var username = $(e.currentTarget).find('input[type=text]').val();
+		var password = $(e.currentTarget).find('input[type=password]').val();
+		
+		var user = new App.Models.User({ username: username, password: password });
+		
+		Backbone.emulateHTTP = true;
+		user.save();
 	}
 });
 
