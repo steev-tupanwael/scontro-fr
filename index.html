@@ -29,13 +29,13 @@
 					<div class="loginbox">
 						<div class="bglogin"></div>
 						<div class="logologin"></div>
-						<form>
-							<div>Username</div>
-							<div><input type="text"></div>
-							<div>Password</div>
-							<div><input type="password"></div>
+						<form id="login">
+							<div><label for="username">Username</label></div>
+							<div><input type="text" id="username" name="username"></div>
+							<div><label for="password">Password</label></div>
+							<div><input type="password" id="password" name="password"></div>
 							<div>
-								<button>Log In</button>
+								<input type="submit" value="Log In">
 							</div>
 						</form>
 					</div>
@@ -103,13 +103,14 @@
 		<script src="js/views.js"></script>
 		<script src="js/router.js"></script>
 		<script>
-			// new App.Router;
-			// Backbone.history.start();
+			new App.Router;
+			Backbone.history.start();
+
+			
 
 			var wrap = $(window);
 
 			wrap.on("scroll", function(e) {
-				console.log(wrap.scrollTop());
 				if (wrap.scrollTop() > 50) {
 					$("#topmenu").addClass('fix-topmenu');
 				} else {
